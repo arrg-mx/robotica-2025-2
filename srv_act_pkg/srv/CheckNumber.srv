@@ -1,0 +1,5 @@
+# Request
+int64 number # Numero a revsar
+---
+# Response
+string result # Resultado si el numero es par o impar

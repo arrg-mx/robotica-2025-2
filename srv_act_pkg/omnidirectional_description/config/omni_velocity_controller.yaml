@@ -1,0 +1,26 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 #Hz
+    
+    wheel_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+      # Note: the joint velocity is instantaneously reached
+      
+    #joint_state_broadcaster:
+     # type: joint_state_broadcaster/JointStateBroadcaster
+     #THIS IS NOT REQUIRED BECAUSE GAZEBO PUGIN PUBLISHES JOINT STATES, BUT VELOCITY AND EFFORT ARE NOT PUBLISHED
+ 
+wheel_velocity_controller:
+  ros__parameters:
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+      #- effort
+    joints:
+      - wheel_left_front_joint
+      - wheel_rigth_front_joint
+      - wheel_left_back_joint
+      - wheel_rigth_back_joint
+
